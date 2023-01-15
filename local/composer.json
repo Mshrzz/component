@@ -1,0 +1,6 @@
+{
+    "require": {
+        "kint-php/kint": "^3.3",
+        "ge1i0n/bitrix-blade": "^0.9.4"
+    }
+}

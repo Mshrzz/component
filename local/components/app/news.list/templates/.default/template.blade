@@ -1,0 +1,33 @@
+@if (!empty($arResult['ITEMS']))
+    <div class="news-list">
+        @foreach ($arResult['ITEMS'] as $arItem)
+            <div class="news-item news-list__news-item">
+                @if ($arItem['PICTURE_SRC'])
+                    <div class="news-item__image-wrap">
+                        <img src="{{ $arItem['PICTURE_SRC'] }}" alt="{{ $arItem['NAME'] }}">
+                    </div>
+                    <!-- /.news-item__image-wrap -->
+                @endif
+                <a href="{{ $arItem['DETAIL_PAGE_URL'] }}" class="news-item__title">{{ $arItem['NAME'] }}</a>
+                <!-- /.news-item__title -->
+                @if ($arItem['PREVIEW_TEXT'])
+                    <p class="news-item__description">{{ $arItem['PREVIEW_TEXT'] }}</p>
+                    <!-- /.news-item__description -->
+                @endif
+            </div>
+            <!-- /.news-item news-list__news-item -->
+        @endforeach
+    </div>
+    <!-- /.news-list -->
+    @if ($arResult['ITEMS_COUNT'] > 0)
+        <div class="nav">
+            @for ($i = 0; $i < $arResult['ITEMS_COUNT'] / $arResult['NAV_COUNT']; $i++)
+                <a href="?PAGE={{ $i }}" class="nav__item">{{ $i + 1 }}</a>
+                <!-- /.nav__item -->
+            @endfor
+        </div>
+        <!-- /.nav -->
+    @endif
+@else
+    <h1>Новостей нет</h1>
+@endif

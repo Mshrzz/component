@@ -1,0 +1,13 @@
+<div class="news-detail">
+    @if ($arResult['ITEM']['DETAIL_PICTURE_SRC'])
+        <div class="news-detail__image">
+            <img src="{{ $arResult['ITEM']['DETAIL_PICTURE_SRC'] }}" alt="{{ $arResult['ITEM']['NAME'] }}">
+        </div>
+        <!-- /.news-detail__image -->
+    @endif
+    <h1>{{ $arResult['ITEM']['NAME'] }}</h1>
+    @if ($arResult['ITEM']['DETAIL_TEXT'])
+        <p>{{ $arResult['ITEM']['DETAIL_TEXT'] }}</p>
+    @endif
+</div>
+<!-- /.news-detail -->
